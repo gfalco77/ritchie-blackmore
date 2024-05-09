@@ -1,0 +1,20 @@
+{
+    "name": "ProductStock",
+    "namespace": "com.phoenix.schema.stock",
+    "type": "record",
+    "fields": [
+        {
+            "name": "sku",
+            "type": "int"
+        },
+        {
+            "name": "quantity",
+            "type": "long"
+        },
+        {
+            "name": "locationName",
+            "type": "string"
+        }
+    ]
+
+}
