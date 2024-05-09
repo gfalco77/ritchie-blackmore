@@ -39,12 +39,13 @@
                         <goals>
                             <goal>schema</goal>
                         </goals>
+                        <configuration>
+                            <sourceDirectory>${project.basedir}/src/main/resources/avro/</sourceDirectory>
+                            <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                            <stringType>String</stringType>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <sourceDirectory>${project.basedir}/src/main/resources/avro/</sourceDirectory>
-                    <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
-                </configuration>
             </plugin>
         </plugins>
     </build>
