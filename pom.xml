@@ -13,6 +13,7 @@
         <java.version>21</java.version>
         <avro.version>1.11.3</avro.version>
         <maven.release.plugin.version>3.0.1</maven.release.plugin.version>
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <kafka-schema-registry-plugin.version>7.6.0</kafka-schema-registry-plugin.version>
         <schema-registry-url>http://localhost:8081</schema-registry-url>
     </properties>
@@ -56,6 +57,16 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
