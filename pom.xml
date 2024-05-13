@@ -4,7 +4,7 @@
 
     <groupId>phoenix</groupId>
     <artifactId>ritchie-blackmore</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
 
     <description>Schema for Kafka beans</description>
 
