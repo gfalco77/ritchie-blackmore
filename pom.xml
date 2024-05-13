@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>phoenix</groupId>
     <artifactId>ritchie-blackmore</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     <description>Schema for Kafka beans</description>
 
@@ -17,14 +16,14 @@
         <kafka-schema-registry-plugin.version>7.6.0</kafka-schema-registry-plugin.version>
         <schema-registry-url>http://localhost:8081</schema-registry-url>
         <maven-deploy-plugin.version>3.1.2</maven-deploy-plugin.version>
-        <nexus-maven-plugin.version>1.6.7</nexus-maven-plugin.version>
+        <nexus-maven-plugin.version>1.6.13</nexus-maven-plugin.version>
     </properties>
 
     <scm>
         <connection>scm:git:${project.scm.url}</connection>
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
         <url>git@github.com:gfalco77/ritchie-blackmore.git</url>
-        <tag>HEAD</tag>
+        <tag>0.0.1</tag>
     </scm>
 
     <distributionManagement>
@@ -102,8 +101,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>17</source>
-                    <target>17</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
 
@@ -152,10 +151,10 @@
                     <compatibilityLevels>
                         <__GLOBAL>BACKWARD</__GLOBAL>
                     </compatibilityLevels>
-                    <messagePath/>
-                    <outputPath/>
-                    <previousSchemaPaths/>
-                    <schemas/>
+                    <messagePath />
+                    <outputPath />
+                    <previousSchemaPaths />
+                    <schemas />
                     <schemaTypes>
                         <productStock>AVRO</productStock>
                     </schemaTypes>
