@@ -16,6 +16,8 @@
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <kafka-schema-registry-plugin.version>7.6.0</kafka-schema-registry-plugin.version>
         <schema-registry-url>http://localhost:8081</schema-registry-url>
+        <maven-deploy-plugin.version>3.1.2</maven-deploy-plugin.version>
+        <nexus-maven-plugin.version>1.6.7</nexus-maven-plugin.version>
     </properties>
 
     <scm>
@@ -27,9 +29,8 @@
 
     <distributionManagement>
         <repository>
-            <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/gfalco77/ritchie-blackmore</url>
+            <id>nexus-releases</id>
+            <url>http://localhost:9081/nexus/content/repositories/releases</url>
         </repository>
     </distributionManagement>
 
@@ -55,8 +56,47 @@
         </dependency>
     </dependencies>
 
+
+    <profiles>
+        <profile>
+            <id>releases</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>${nexus-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>default-deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <serverId>nexus-releases</serverId>
+                            <nexusUrl>http://localhost:9081/nexus/</nexusUrl>
+                            <skipStaging>true</skipStaging>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven-deploy-plugin.version}</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -74,6 +114,7 @@
                 <configuration>
                     <scmCommentPrefix>[ci skip]</scmCommentPrefix>
                     <tagNameFormat>@{project.version}</tagNameFormat>
+                    <releaseProfiles>releases</releaseProfiles>
                 </configuration>
             </plugin>
 
