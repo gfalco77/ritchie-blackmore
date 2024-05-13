@@ -23,6 +23,8 @@ jobs:
         env:
           JAVA_HOME: /usr/lib/jvm/java-17-openjdk/
         with:
+          release-branch-name: "main"
+
           git-release-bot-name: "bot-idhub"
           git-release-bot-email: "bot@idhub.io"
 
