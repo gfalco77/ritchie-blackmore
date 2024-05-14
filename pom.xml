@@ -4,7 +4,7 @@
 
     <groupId>phoenix</groupId>
     <artifactId>ritchie-blackmore</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
 
     <description>Schema for Kafka beans</description>
 
@@ -23,7 +23,7 @@
         <connection>scm:git:${project.scm.url}</connection>
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
         <url>git@github.com:gfalco77/ritchie-blackmore.git</url>
-        <tag>0.0.2</tag>
+        <tag>0.0.1</tag>
     </scm>
 
     <distributionManagement>
