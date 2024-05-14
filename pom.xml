@@ -55,7 +55,6 @@
         </dependency>
     </dependencies>
 
-
     <profiles>
         <profile>
             <id>releases</id>
@@ -93,6 +92,17 @@
                 <version>${maven-deploy-plugin.version}</version>
                 <configuration>
                     <skip>true</skip>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>${nexus-maven-plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>local-nexus</serverId>
+                    <nexusUrl>http://localhost:9081/nexus/</nexusUrl>
                 </configuration>
             </plugin>
 
