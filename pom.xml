@@ -55,55 +55,12 @@
         </dependency>
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>releases</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>${nexus-maven-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>default-deploy</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>deploy</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <serverId>nexus-releases</serverId>
-                            <nexusUrl>http://localhost:9081/nexus/</nexusUrl>
-                            <skipStaging>true</skipStaging>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>${maven-deploy-plugin.version}</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>${nexus-maven-plugin.version}</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>local-nexus</serverId>
-                    <nexusUrl>http://localhost:9081/nexus/</nexusUrl>
-                </configuration>
             </plugin>
 
             <plugin>
