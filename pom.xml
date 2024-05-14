@@ -29,7 +29,7 @@
     <distributionManagement>
         <repository>
             <id>nexus-releases</id>
-            <url>http://localhost:9081/nexus/content/repositories/releases</url>
+            <url>http://localhost:9081/repository/nexus-releases/</url>
         </repository>
     </distributionManagement>
 
@@ -80,7 +80,6 @@
                 <configuration>
                     <scmCommentPrefix>[ci skip]</scmCommentPrefix>
                     <tagNameFormat>@{project.version}</tagNameFormat>
-                    <releaseProfiles>releases</releaseProfiles>
                 </configuration>
             </plugin>
 
