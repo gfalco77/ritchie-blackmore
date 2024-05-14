@@ -61,15 +61,15 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-<!--            <repositories>-->
-<!--                <repository>-->
-<!--                    <id>central</id>-->
-<!--                    <url>http://localhost:9081/repository/nexus-releases/</url>-->
-<!--                    <releases>-->
-<!--                        <enabled>true</enabled>-->
-<!--                    </releases>-->
-<!--                </repository>-->
-<!--            </repositories>-->
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>http://localhost:9081/repository/nexus-releases/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+            </repositories>
         </profile>
     </profiles>
 
