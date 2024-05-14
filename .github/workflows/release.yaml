@@ -21,7 +21,7 @@ jobs:
       - name: Release
         uses: qcastel/github-actions-maven-release@master
         env:
-          JAVA_HOME: /usr/lib/jvm/java-21-openjdk/
+          JAVA_HOME: /usr/lib/jvm/java-17-openjdk/
         with:
           release-branch-name: main
 
